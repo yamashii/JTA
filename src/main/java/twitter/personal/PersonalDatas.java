@@ -1,4 +1,4 @@
-package personal;
+package twitter.personal;
 
 
 

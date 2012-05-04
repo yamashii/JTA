@@ -1,4 +1,4 @@
-package tweet;
+package twitter.tweet;
 
 import java.io.BufferedReader;
 import java.io.IOException;

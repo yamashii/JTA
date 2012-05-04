@@ -1,6 +1,6 @@
-package access;
+package twitter.access;
 
-import personal.PersonalDatas;
+import twitter.personal.PersonalDatas;
 import twitter4j.Twitter;
 import twitter4j.TwitterFactory;
 import twitter4j.auth.AccessToken;

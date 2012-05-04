@@ -1,8 +1,8 @@
-package userslist;
+package twitter.usersList;
 
 import javax.management.RuntimeErrorException;
 
-import personal.PersonalDatas;
+import twitter.personal.PersonalDatas;
 import twitter4j.ResponseList;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;

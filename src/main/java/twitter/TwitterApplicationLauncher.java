@@ -1,5 +1,7 @@
 package twitter;
 
+import twitter.index.TweetMain;
+
 /**
  * @author yamashita
  * @version $Revision$, 2012/05/02

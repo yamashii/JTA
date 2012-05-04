@@ -1,15 +1,15 @@
-package twitter;
+package twitter.index;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import tl.friends.FriendsTimeLine;
-import tl.mytl.MyTweetTimeLineDisplay;
-import tweet.TweetInput;
+import twitter.access.TwitterAccessor;
+import twitter.tl.friends.FriendsTimeLine;
+import twitter.tl.own.MyTweetTimeLineDisplay;
+import twitter.tweet.TweetInput;
+import twitter.usersList.UsersListSearch;
 import twitter4j.Twitter;
-import userslist.UsersListSearch;
-import access.TwitterAccessor;
 
 
 /**

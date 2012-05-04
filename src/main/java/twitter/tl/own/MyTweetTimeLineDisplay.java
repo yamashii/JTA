@@ -1,6 +1,6 @@
-package tl.mytl;
+package twitter.tl.own;
 
-import personal.PersonalDatas;
+import twitter.personal.PersonalDatas;
 import twitter4j.ResponseList;
 import twitter4j.Status;
 import twitter4j.Twitter;

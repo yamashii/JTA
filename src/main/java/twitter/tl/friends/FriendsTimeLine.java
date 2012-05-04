@@ -1,4 +1,4 @@
-package tl.friends;
+package twitter.tl.friends;
 
 import twitter4j.ResponseList;
 import twitter4j.Status;
