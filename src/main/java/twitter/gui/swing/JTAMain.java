@@ -4,6 +4,8 @@ import java.awt.Container;
 
 import javax.swing.JFrame;
 
+import twitter.gui.swing.menu.Menu;
+
 public class JTAMain extends JFrame {
 	/**
 	 * 
