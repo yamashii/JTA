@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 public class ExitMenuAction implements ActionListener {
 
 	public void actionPerformed(ActionEvent arg0) {
+		System.out.println("システムを終了します。"); //$NON-NLS-1$
 		System.exit(0);
 	}
 
