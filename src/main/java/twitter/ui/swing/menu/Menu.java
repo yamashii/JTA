@@ -1,4 +1,4 @@
-package twitter.gui.swing.menu;
+package twitter.ui.swing.menu;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;

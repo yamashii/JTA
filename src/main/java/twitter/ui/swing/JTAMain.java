@@ -1,10 +1,11 @@
-package twitter.gui.swing;
+package twitter.ui.swing;
 
 import java.awt.Container;
 
 import javax.swing.JFrame;
 
-import twitter.gui.swing.menu.Menu;
+import twitter.ui.swing.menu.Menu;
+
 
 public class JTAMain extends JFrame {
 	/**

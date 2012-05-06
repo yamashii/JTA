@@ -1,4 +1,4 @@
-package twitter.gui.swing.menu.action;
+package twitter.ui.swing.action;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

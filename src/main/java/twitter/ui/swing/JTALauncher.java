@@ -1,4 +1,4 @@
-package twitter.gui.swing;
+package twitter.ui.swing;
 
 
 public class JTALauncher {

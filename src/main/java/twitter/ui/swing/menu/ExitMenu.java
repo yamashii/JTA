@@ -1,8 +1,8 @@
-package twitter.gui.swing.menu;
+package twitter.ui.swing.menu;
 
 import javax.swing.JMenuItem;
 
-import twitter.gui.swing.menu.action.ExitMenuAction;
+import twitter.ui.swing.action.ExitMenuAction;
 
 public class ExitMenu {
 	private JMenuItem item;
