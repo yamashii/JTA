@@ -1,5 +1,6 @@
 package twitter.friends;
 
+import twitter.TwitterFunction;
 import twitter4j.IDs;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
@@ -10,7 +11,7 @@ import twitter4j.User;
  * @author yamashita
  * @version $Revision$, 2012/05/25
  */
-public class FollowedFriendsStatus {
+public class FollowedFriendsStatus implements TwitterFunction {
 
   private Twitter twitter;
 
@@ -26,19 +27,15 @@ public class FollowedFriendsStatus {
   /**
    * 
    */
-  public void searchFollowedUser() {
+  public void func() {
     try {
       IDs follower = this.twitter.getFollowersIDs(this.twitter.getScreenName(), -1);
       long[] id = follower.getIDs();
-      String[] names = new String[id.length];
       System.out.println("処理中です。しばらくお待ちください。");
       for (int i = 0; i < id.length; i++) {
         User user = this.twitter.showUser(id[i]);
         System.out.println(user.getName());
       }
-      //for (int i = 0; i < names.length; i++) {
-
-      //      }
     } catch (IllegalStateException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();

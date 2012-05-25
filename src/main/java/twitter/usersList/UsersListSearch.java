@@ -1,7 +1,6 @@
 package twitter.usersList;
 
-import javax.management.RuntimeErrorException;
-
+import twitter.TwitterFunction;
 import twitter.personal.PersonalDatas;
 import twitter4j.ResponseList;
 import twitter4j.Twitter;
@@ -13,7 +12,7 @@ import twitter4j.UserList;
  * @author yamashita
  * @version $Revision$, 2012/05/02
  */
-public class UsersListSearch {
+public class UsersListSearch  implements TwitterFunction{
 
   Twitter twitter;
 
@@ -29,13 +28,10 @@ public class UsersListSearch {
   /**
    * 
    */
-  public void searchUsersList() {
+  public void func() {
     try {
       ResponseList<UserList> resList = this.twitter.getAllUserLists(PersonalDatas.userId);
       System.out.println(resList.size());
-      //for (UserList list : resList) {
-//        System.out.println(list.getFullName());
-  //    }
     } catch (TwitterException e) {
       throw new RuntimeException(e);
     }

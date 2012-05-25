@@ -1,7 +1,5 @@
 package twitter.gui.swing;
 
-import java.awt.Container;
-
 import javax.swing.JFrame;
 
 import twitter.gui.swing.menu.Menu;
@@ -35,7 +33,6 @@ public class JTAMain extends JFrame {
    * 
    */
   public void run() {
-    Container pane = this.getContentPane();
     this.setJMenuBar(new Menu().getMenuBarComponent());
   }
 }
