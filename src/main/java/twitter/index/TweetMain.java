@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import twitter.access.TwitterAccessor;
 import twitter.friends.FollowedFriendsStatus;
 import twitter.friends.FollowingFriendsStatus;
+import twitter.limit.RateLimitCheck;
 import twitter.tl.friends.FriendsTimeLine;
 import twitter.tl.own.MyTweetTimeLineDisplay;
 import twitter.tweet.TweetInput;
@@ -44,6 +45,7 @@ public class TweetMain {
       System.out.println("4:ユーザの名前全てを見る"); //$NON-NLS-1$
       System.out.println("5:フォローしている人取得"); //$NON-NLS-1$
       System.out.println("6:フォロワー取得"); //$NON-NLS-1$
+      System.out.println("7:アクセス回数確認"); //$NON-NLS-1$
       System.out.println("9:終了"); //$NON-NLS-1$
       String actNum;
       try {
@@ -63,12 +65,17 @@ public class TweetMain {
       } else if (actNum.equals("4")) { //$NON-NLS-1$
         UsersListSearch listSearch = new UsersListSearch(twitter);
         listSearch.searchUsersList();
-      } else if (actNum.equals("5")) { //$NON-NLS-1$
-        FollowingFriendsStatus status = new FollowingFriendsStatus(twitter);
-        status.searchFollowingUser();
-      } else if (actNum.equals("6")) { //$NON-NLS-1$
+      }
+      //else if (actNum.equals("5")) { //$NON-NLS-1$
+      //FollowingFriendsStatus status = new FollowingFriendsStatus(twitter);
+      //status.searchFollowingUser();
+      // }
+      else if (actNum.equals("6")) { //$NON-NLS-1$
         FollowedFriendsStatus status = new FollowedFriendsStatus(twitter);
         status.searchFollowedUser();
+      } else if (actNum.equals("7")) { //$NON-NLS-1$
+        RateLimitCheck check = new RateLimitCheck(twitter);
+        check.checkAccessLimit();
       } else if (actNum.equals("9")) { //$NON-NLS-1$
         condition = false;
       } else {
