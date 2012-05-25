@@ -30,7 +30,7 @@ public class TweetMain {
   /**
    * 
    */
-  public void run() {
+  public static void run() {
     Twitter twitter = TwitterAccessor.accessTwitter();
     boolean condition = true;
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -39,7 +39,7 @@ public class TweetMain {
       System.out.println("1:つぶやく"); //$NON-NLS-1$
       System.out.println("2：自分のつぶやき履歴を見る"); //$NON-NLS-1$
       System.out.println("3：他の人のつぶやきを見る"); //$NON-NLS-1$
-      System.out.println("4:ユーザの名前全てを見る");
+      System.out.println("4:ユーザの名前全てを見る"); //$NON-NLS-1$
       System.out.println("9:終了"); //$NON-NLS-1$
       String actNum;
       try {
@@ -53,11 +53,10 @@ public class TweetMain {
       } else if (actNum.equals("2")) { //$NON-NLS-1$
         MyTweetTimeLineDisplay display = new MyTweetTimeLineDisplay(twitter);
         display.showMyTL();
-      }else if(actNum.equals("3")){ //$NON-NLS-1$
+      } else if (actNum.equals("3")) { //$NON-NLS-1$
         FriendsTimeLine tl = new FriendsTimeLine(twitter);
         tl.displayFriendsTL();
-      }
-      else if (actNum.equals("4")) { //$NON-NLS-1$
+      } else if (actNum.equals("4")) { //$NON-NLS-1$
         UsersListSearch listSearch = new UsersListSearch(twitter);
         listSearch.searchUsersList();
       } else if (actNum.equals("9")) { //$NON-NLS-1$
