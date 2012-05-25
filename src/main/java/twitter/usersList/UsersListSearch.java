@@ -31,9 +31,13 @@ public class UsersListSearch  implements TwitterFunction{
   public void func() {
     try {
       ResponseList<UserList> resList = this.twitter.getAllUserLists(PersonalDatas.userId);
-      System.out.println(resList.size());
+      showResult(resList);
     } catch (TwitterException e) {
       throw new RuntimeException(e);
     }
+  }
+
+  private static void showResult(ResponseList<UserList> resList) {
+    System.out.println(resList.size());
   }
 }

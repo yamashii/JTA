@@ -31,13 +31,16 @@ public class MyTweetTimeLineDisplay implements TwitterFunction {
   public void func() {
     try {
       ResponseList<Status> userTl = this.twitter.getUserTimeline(PersonalDatas.userId);
-
-      System.out.println("KkmYjのツイート履歴(20件)"); //$NON-NLS-1$
-      for (Status tl : userTl) {
-        System.out.println(tl.getText());
-      }
+      showResult(userTl);
     } catch (TwitterException e) {
       throw new RuntimeException(e);
+    }
+  }
+
+  private static void showResult(ResponseList<Status> userTl) {
+    System.out.println("KkmYjのツイート履歴(20件)"); //$NON-NLS-1$
+    for (Status tl : userTl) {
+      System.out.println(tl.getText());
     }
   }
 

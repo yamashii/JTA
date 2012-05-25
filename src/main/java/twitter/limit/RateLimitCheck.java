@@ -45,6 +45,10 @@ public class RateLimitCheck implements TwitterFunction {
       throw new RuntimeException(e);
     }
 
+    showResult(hourlyLimit, rateLimit, resetTimeInSec, secUntilReset);
+  }
+
+  private static void showResult(int hourlyLimit, int rateLimit, int resetTimeInSec, int secUntilReset) {
     System.out.println("現在のアクセス最大回数:" + hourlyLimit + "回"); //$NON-NLS-1$//$NON-NLS-2$
     System.out.println("残りアクセス回数：" + rateLimit + "回"); //$NON-NLS-1$ //$NON-NLS-2$
     System.out.println("リセットされる時間：" + resetTimeInSec + ""); //$NON-NLS-1$ //$NON-NLS-2$

@@ -31,12 +31,16 @@ public class FriendsTimeLine implements TwitterFunction {
     try {
       ResponseList<Status> resList = this.twitter.getHomeTimeline();
       for (Status status : resList) {
-        System.out.println(status.getUser().getName());
-        System.out.println(status.getText());
-        System.out.println();
+        showResult(status);
       }
     } catch (TwitterException e) {
       throw new RuntimeException(e);
     }
+  }
+
+  private static void showResult(Status status) {
+    System.out.println(status.getUser().getName());
+    System.out.println(status.getText());
+    System.out.println();
   }
 }

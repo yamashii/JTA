@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import twitter.TwitterFunction;
 import twitter.access.*;
 import twitter.friends.FollowedFriendsStatus;
+import twitter.index.funcname.FunctionName;
 import twitter.limit.RateLimitCheck;
 import twitter.tl.friends.FriendsTimeLine;
 import twitter.tl.own.MyTweetTimeLineDisplay;
@@ -45,29 +46,31 @@ public class TweetMain {
       } catch (IOException e) {
         throw new RuntimeException(e);
       }
-      if (actNum.equals("1")) { //$NON-NLS-1$
+
+      if (Integer.parseInt(actNum) == FunctionName.Tweet) {
         TwitterFunction input = new TweetInput(twitter);
         input.func();
-      } else if (actNum.equals("2")) { //$NON-NLS-1$
+      } else if (Integer.parseInt(actNum) == FunctionName.MYTL) {
         TwitterFunction display = new MyTweetTimeLineDisplay(twitter);
         display.func();
-      } else if (actNum.equals("3")) { //$NON-NLS-1$
+      } else if (Integer.parseInt(actNum) == FunctionName.FriendsTL) {
         TwitterFunction tl = new FriendsTimeLine(twitter);
         tl.func();
-      } else if (actNum.equals("4")) { //$NON-NLS-1$
+      } else if (Integer.parseInt(actNum) == FunctionName.UsersList) {
         TwitterFunction listSearch = new UsersListSearch(twitter);
         listSearch.func();
-      } else if (actNum.equals("6")) { //$NON-NLS-1$
+      } else if (Integer.parseInt(actNum) == FunctionName.Follower) {
         TwitterFunction status = new FollowedFriendsStatus(twitter);
         status.func();
-      } else if (actNum.equals("7")) { //$NON-NLS-1$
+      } else if (Integer.parseInt(actNum) == FunctionName.LimitCheck) {
         TwitterFunction check = new RateLimitCheck(twitter);
         check.func();
-      } else if (actNum.equals("9")) { //$NON-NLS-1$
+      } else if (Integer.parseInt(actNum) == FunctionName.EXIT) {
         condition = false;
       } else {
         System.out.println("選びなおしてください。"); //$NON-NLS-1$
       }
+
       System.out.println();
     }
     System.out.println("システムを終了します。"); //$NON-NLS-1$
