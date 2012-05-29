@@ -1,5 +1,6 @@
 package twitter.tl.friends;
 
+import twitter.TwitterFunction;
 import twitter4j.ResponseList;
 import twitter4j.Status;
 import twitter4j.Twitter;
@@ -10,7 +11,7 @@ import twitter4j.TwitterException;
  * @author yamashita
  * @version $Revision$, 2012/05/02
  */
-public class FriendsTimeLine {
+public class FriendsTimeLine implements TwitterFunction {
 
   Twitter twitter;
 
@@ -26,16 +27,20 @@ public class FriendsTimeLine {
   /**
    * 
    */
-  public void displayFriendsTL() {
+  public void func() {
     try {
       ResponseList<Status> resList = this.twitter.getHomeTimeline();
       for (Status status : resList) {
-        System.out.println(status.getUser().getName());
-        System.out.println(status.getText());
-        System.out.println();
+        showResult(status);
       }
     } catch (TwitterException e) {
       throw new RuntimeException(e);
     }
+  }
+
+  private static void showResult(Status status) {
+    System.out.println(status.getUser().getName());
+    System.out.println(status.getText());
+    System.out.println();
   }
 }

@@ -1,5 +1,6 @@
 package twitter.tl.own;
 
+import twitter.TwitterFunction;
 import twitter.personal.PersonalDatas;
 import twitter4j.ResponseList;
 import twitter4j.Status;
@@ -11,7 +12,7 @@ import twitter4j.TwitterException;
  * @author yamashita
  * @version $Revision$, 2012/05/02
  */
-public class MyTweetTimeLineDisplay {
+public class MyTweetTimeLineDisplay implements TwitterFunction {
 
   Twitter twitter;
 
@@ -27,18 +28,20 @@ public class MyTweetTimeLineDisplay {
   /**
  * 
  */
-  public void showMyTL() {
-    ResponseList<Status> userTl;
+  public void func() {
     try {
-      userTl = this.twitter.getUserTimeline(PersonalDatas.userId);
+      ResponseList<Status> userTl = this.twitter.getUserTimeline(PersonalDatas.userId);
+      showResult(userTl);
     } catch (TwitterException e) {
       throw new RuntimeException(e);
     }
+  }
+
+  private static void showResult(ResponseList<Status> userTl) {
     System.out.println("KkmYjのツイート履歴(20件)"); //$NON-NLS-1$
     for (Status tl : userTl) {
       System.out.println(tl.getText());
     }
-
   }
 
 }
