@@ -3,7 +3,10 @@ package twitter.gui.swing;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 
+import twitter.access.TwitterAccessor;
+import twitter.gui.swing.display.TLDisplay;
 import twitter.gui.swing.menu.Menu;
+import twitter4j.Twitter;
 
 
 /**
@@ -30,6 +33,9 @@ public class JTAMain extends JFrame {
     this.setLocationRelativeTo(null);
     this.setVisible(true);
     this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+    Twitter twitter = TwitterAccessor.accessTwitter();
+    this.add(new TLDisplay(twitter));
   }
 
   /**

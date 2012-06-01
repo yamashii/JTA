@@ -14,6 +14,7 @@ import twitter4j.TwitterException;
 public class FriendsTimeLine implements TwitterFunction {
 
   Twitter twitter;
+  private ResponseList<Status> resList;
 
   /**
    * Initialize the generated object of {@link FriendsTimeLine}.
@@ -29,8 +30,8 @@ public class FriendsTimeLine implements TwitterFunction {
    */
   public void func() {
     try {
-      ResponseList<Status> resList = this.twitter.getHomeTimeline();
-      for (Status status : resList) {
+      this.resList = this.twitter.getHomeTimeline();
+      for (Status status : this.resList) {
         showResult(status);
       }
     } catch (TwitterException e) {
@@ -43,4 +44,12 @@ public class FriendsTimeLine implements TwitterFunction {
     System.out.println(status.getText());
     System.out.println();
   }
+
+  /**
+   * @return
+   */
+  public ResponseList<Status> getResList() {
+    return this.resList;
+  }
+
 }
