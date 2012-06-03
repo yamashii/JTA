@@ -31,9 +31,9 @@ public class FriendsTimeLine implements TwitterFunction {
   public void func() {
     try {
       this.resList = this.twitter.getHomeTimeline();
-      for (Status status : this.resList) {
-        showResult(status);
-      }
+      //      for (Status status : this.resList) {
+      //        showResult(status);
+      //      }
     } catch (TwitterException e) {
       throw new RuntimeException(e);
     }
